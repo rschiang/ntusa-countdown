@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>倒數計時器</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/zepto/1.1.6/zepto.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <div class="countdown days">
+            <span class="label">0</span>
+            <span class="unit">天</span>
+        </div>
+        <div class="countdown hours">
+            <span class="label">0</span>
+            <span class="unit">時</span>
+        </div>
+        <div class="countdown minutes">
+            <span class="label">0</span>
+            <span class="unit">分</span>
+        </div>
+        <div class="countdown seconds">
+            <span class="label">0</span>
+            <span class="unit">秒</span>
+        </div>
+    </div>
+    <script>
+
+    function updateTimer() {
+        var now = new Date();
+        var target = new Date(2016, 8, 1, 0, 0, 0);
+
+        var diff = Math.ceil((target - now) / 1000);
+        diff = (diff > 0) ? diff : 0;
+
+        $('.countdown.seconds .label').text(diff % 60);
+        diff = Math.floor(diff / 60);
+
+        $('.countdown.minutes .label').text(diff % 60);
+        diff = Math.floor(diff / 60);
+
+        $('.countdown.hours .label').text(diff % 24);
+        diff = Math.floor(diff / 24);
+
+        $('.countdown.days .label').text(diff);
+
+        setTimeout(updateTimer, 1000);
+    }
+
+    updateTimer();
+
+    </script>
+</body>
+</html>
