@@ -16,6 +16,7 @@ body {
 .countdown {
     display: inline-block;
     width: 24%;
+    padding: 5% 0;
 }
 
 .label {
