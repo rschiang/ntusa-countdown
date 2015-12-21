@@ -1,0 +1,11 @@
+body {
+    font-family: Overpass, 'Avenir Next', Roboto, 'Trebuchet MS',
+                 'Source Han Sans TC', 'Noto Sans T Chinese',
+                 'Pingfang TC', 'Microsoft Jhenghei', sans-serif;
+}
+
+.label {
+    font-size: 5em;
+    font-weight: bold;
+    letter-spacing: -0.015em;
+}
