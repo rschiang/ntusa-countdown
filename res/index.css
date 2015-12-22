@@ -1,3 +1,7 @@
+* {
+    box-sizing: border-box;
+}
+
 body {
     font-family: Overpass, 'Avenir Next', Roboto, 'Trebuchet MS',
                  'Source Han Sans TC', 'Noto Sans T Chinese',
@@ -13,10 +17,25 @@ body {
     font-weight: 400;
 }
 
-.countdown {
-    display: inline-block;
-    width: 24%;
-    padding: 5% 0;
+@media screen and (min-width: 32em) {
+    .countdown {
+        float: left;
+        width: 50vw;
+        height: 50vw;
+    }
+
+    .countdown:after {
+        content: '';
+        display: block;
+        clear: both;
+    }
+}
+
+@media screen and (min-width: 64em) {
+    .countdown {
+        width: 16rem;
+        height: 16rem;
+    }
 }
 
 .label {
