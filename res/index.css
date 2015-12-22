@@ -2,6 +2,11 @@
     box-sizing: border-box;
 }
 
+body, html {
+    padding: 0;
+    margin: 0;
+}
+
 body {
     font-family: Overpass, 'Avenir Next', Roboto, 'Trebuchet MS',
                  'Source Han Sans TC', 'Noto Sans T Chinese',
@@ -17,11 +22,16 @@ body {
     font-weight: 400;
 }
 
+.countdown {
+    padding: 2rem;
+}
+
 @media screen and (min-width: 32em) {
     .countdown {
         float: left;
         width: 50vw;
         height: 50vw;
+        text-align: center;
     }
 
     .countdown:after {
