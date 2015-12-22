@@ -8,6 +8,8 @@ body, html {
 }
 
 body {
+    background: #e10036;
+    color: #fff;
     font-family: Overpass, 'Avenir Next', Roboto, 'Trebuchet MS',
                  'Source Han Sans TC', 'Noto Sans T Chinese',
                  'Pingfang TC', 'Microsoft Jhenghei', sans-serif;
@@ -23,7 +25,7 @@ body {
 }
 
 .countdown {
-    padding: 2rem;
+    padding: 1rem 2rem;
 }
 
 @media screen and (min-width: 32em) {
@@ -31,13 +33,28 @@ body {
         float: left;
         width: 50vw;
         height: 50vw;
+        border: .5em #e10036 solid;
+        border-radius: 50%;
+        background: #fff;
+        color: #242020;
         text-align: center;
+        vertical-align: middle;
     }
 
     .countdown:after {
         content: '';
         display: block;
         clear: both;
+    }
+
+    .label {
+        display: block;
+        line-height: 35vw;
+    }
+
+    .unit {
+        display: block;
+        line-height: 8vw;
     }
 }
 
@@ -46,10 +63,18 @@ body {
         width: 16rem;
         height: 16rem;
     }
+
+    .label {
+        line-height: 11.2rem;
+    }
+
+    .unit {
+        line-height: 1;
+    }
 }
 
 .label {
     font-size: 5em;
     font-weight: bold;
-    letter-spacing: -0.015em;
+    letter-spacing: -0.075em;
 }
