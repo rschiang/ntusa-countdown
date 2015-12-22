@@ -22,7 +22,7 @@ body {
 
 .container h3 {
     font-weight: 400;
-    padding: 1rem 2rem;
+    padding: .5rem 1rem;
 }
 
 .countdown {
@@ -33,6 +33,13 @@ body {
     font-size: 5em;
     font-weight: bold;
     letter-spacing: -0.05em;
+}
+
+.logo {
+    width: auto;
+    height: 3rem;
+    margin: 3rem 2rem 1rem;
+    clear: both;
 }
 
 @media screen and (min-width: 32em) {
