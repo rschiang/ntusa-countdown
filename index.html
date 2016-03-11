@@ -6,11 +6,11 @@
     <title>倒數計時器</title>
     <link rel="stylesheet" href="res/fonts/overpass.css">
     <link rel="stylesheet" href="res/index.css">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/zepto/1.1.6/zepto.min.js"></script>
+    <script src="res/zepto.min.js"></script>
 </head>
 <body>
     <div class="container">
-        <h3>距離 2016 年 8 月還有</h3>
+        <h3>距離 <span class="year">2016</span> 年 <span class="month">8</span> 月<span class="cause"></span>還有</h3>
         <div class="countdown days">
             <span class="label">0</span>
             <span class="unit">天</span>
@@ -30,10 +30,20 @@
         <img class="logo" src="res/logo.png" alt="NTUSA">
     </div>
     <script>
+    var target = new Date();
+    var mode = 0;
+
+    function setTarget(date, cause) {
+        target = date;
+        $('.year').text(date.getFullYear());
+        $('.month').text(date.getMonth() + 1);
+        $('.cause').text(cause || '');
+    }
+
+    setTarget(new Date(2016, 8 - 1, 1, 0, 0, 0));
 
     function updateTimer() {
         var now = new Date();
-        var target = new Date(2016, 8 - 1, 1, 0, 0, 0);
 
         var diff = Math.ceil((target - now) / 1000);
         diff = (diff > 0) ? diff : 0;
@@ -53,6 +63,25 @@
     }
 
     updateTimer();
+
+    $('.logo').on('click', function() {
+        mode++;
+        switch (mode) {
+            case 1:
+                setTarget(new Date(2016, 8 - 1, 1, 0, 0, 0), '卸任');
+                break;
+            case 2:
+                setTarget(new Date(2016, 4 - 1, 18, 0, 0, 0), '期中考');
+                break;
+            case 3:
+                setTarget(new Date(2016, 6 - 1, 20, 0, 0, 0), '期末考');
+                break;
+            default:
+                mode = 0;
+                setTarget(new Date(2016, 8 - 1, 1, 0, 0, 0));
+                break;
+        }
+    })
 
     </script>
 </body>
