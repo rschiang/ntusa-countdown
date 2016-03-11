@@ -33,7 +33,7 @@
 
     function updateTimer() {
         var now = new Date();
-        var target = new Date(2016, 8, 1, 0, 0, 0);
+        var target = new Date(2016, 8 - 1, 1, 0, 0, 0);
 
         var diff = Math.ceil((target - now) / 1000);
         diff = (diff > 0) ? diff : 0;
