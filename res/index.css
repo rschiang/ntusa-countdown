@@ -5,6 +5,9 @@
 body, html {
     padding: 0;
     margin: 0;
+    user-select: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
 }
 
 body {
@@ -75,6 +78,11 @@ body {
         line-height: 8vw;
         color: #e94f63;
     }
+}
+
+.invert {
+    filter: invert(100%) contrast(75%);
+    -webkit-filter: invert(100%) contrast(75%);
 }
 
 @media screen and (min-width: 64em) {

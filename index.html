@@ -38,6 +38,7 @@
         $('.year').text(date.getFullYear());
         $('.month').text(date.getMonth() + 1);
         $('.cause').text(cause || '');
+        $('.countdown .label').text('⋯');
     }
 
     setTarget(new Date(2016, 8 - 1, 1, 0, 0, 0));
@@ -64,7 +65,7 @@
 
     updateTimer();
 
-    $('.logo').on('click', function() {
+    $('.logo').on('click', function(e) {
         mode++;
         switch (mode) {
             case 1:
@@ -81,6 +82,10 @@
                 setTarget(new Date(2016, 8 - 1, 1, 0, 0, 0));
                 break;
         }
+    });
+
+    $('html').on('dblclick', function() {
+        $('html').toggleClass('invert');
     })
 
     </script>
